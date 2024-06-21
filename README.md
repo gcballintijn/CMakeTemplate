@@ -1,2 +1,2 @@
 # CMakeTemplate
-My CMake starter project
+My CMake starter project.
