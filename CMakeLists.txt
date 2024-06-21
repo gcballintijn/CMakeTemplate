@@ -6,4 +6,13 @@ project(CMakeTemplate
     LANGUAGES CXX
 )
 
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+configure_file(config.hpp.in config.hpp)
+
 add_executable(application application.cpp)
+target_include_directories(application
+    PUBLIC
+    "${PROJECT_BINARY_DIR}"
+)
