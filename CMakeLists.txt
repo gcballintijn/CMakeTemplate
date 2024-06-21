@@ -16,3 +16,5 @@ target_include_directories(application
     PUBLIC
     "${PROJECT_BINARY_DIR}"
 )
+
+install(TARGETS application DESTINATION bin)
