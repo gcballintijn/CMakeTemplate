@@ -6,18 +6,21 @@
 #include <iostream>
 
 #include "config.hpp"
+#include "Something.hpp" 
 
 
 int
 main(int, const char **)
 {
     std::cout << "Application template" 
-            << " (" << cmake_template_version << ")"
+            << " (" << Config::cmake_template_version << ")"
             << std::endl;
-    std::cout << "major: " << cmake_template_major
-            << " minor: " << cmake_template_minor
-            << " patch: " << cmake_template_patch
+    std::cout << "major: " << Config::cmake_template_major
+            << " minor: " << Config::cmake_template_minor
+            << " patch: " << Config::cmake_template_patch
             << std::endl;
+
+    Something::do_something();
 
     return EXIT_SUCCESS;
 }

@@ -8,9 +8,16 @@
 #define CMAKE_TEMPLATE_CONFIG_HPP
 
 
-constexpr int cmake_template_major{@CMakeTemplate_VERSION_MAJOR@};
-constexpr int cmake_template_minor{@CMakeTemplate_VERSION_MINOR@};
-constexpr int cmake_template_patch{@CMakeTemplate_VERSION_PATCH@};
-constexpr const char * cmake_template_version = "@CMakeTemplate_VERSION@";
+namespace Config {
+
+    constexpr int cmake_template_major{@CMakeTemplate_VERSION_MAJOR@};
+
+    constexpr int cmake_template_minor{@CMakeTemplate_VERSION_MINOR@};
+
+    constexpr int cmake_template_patch{@CMakeTemplate_VERSION_PATCH@};
+
+    constexpr const char * cmake_template_version = "@CMakeTemplate_VERSION@";
+
+}  // namespace Config
 
 #endif  // !CMAKE_TEMPLATE_CONFIG_HPP

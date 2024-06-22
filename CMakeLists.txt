@@ -19,10 +19,17 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 configure_file(config.hpp.in config.hpp)
 
+add_subdirectory(subdir)
+
 add_executable(application application.cpp)
 target_include_directories(application
     PUBLIC
     "${PROJECT_BINARY_DIR}"
+    "${PROJECT_SOURCE_DIR}/subdir"
+)
+target_link_libraries(application
+    PUBLIC 
+    something
 )
 
 install(TARGETS application DESTINATION bin)
