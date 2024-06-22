@@ -6,16 +6,21 @@
 
 #include <iostream>
 
+#include <curses.h>
 
 namespace Something {
 
     void do_something()
     {
+        initscr();
+
 #if defined(DO_SOMETHING_BIG)
-        std::cout << "doing something BIG!" << std::endl;
+        addstr("doing something BIG!");
 #else
-        std::cout << "doing something (small)!" << std::endl;
+        addstr("doing something (small)!");
 #endif
+        getch();
+        endwin();
     }
 
 }  // namespace Something
