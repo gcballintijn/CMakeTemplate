@@ -10,13 +10,13 @@
 
 namespace Config {
 
-    constexpr int cmake_template_major{@CMakeTemplate_VERSION_MAJOR@};
+    constinit int cmake_template_major{@CMakeTemplate_VERSION_MAJOR@};
 
-    constexpr int cmake_template_minor{@CMakeTemplate_VERSION_MINOR@};
+    constinit int cmake_template_minor{@CMakeTemplate_VERSION_MINOR@};
 
-    constexpr int cmake_template_patch{@CMakeTemplate_VERSION_PATCH@};
+    constinit int cmake_template_patch{@CMakeTemplate_VERSION_PATCH@};
 
-    constexpr const char * cmake_template_version = "@CMakeTemplate_VERSION@";
+    constinit const char * cmake_template_version = "@CMakeTemplate_VERSION@";
 
 }  // namespace Config
 
