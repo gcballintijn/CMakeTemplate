@@ -11,7 +11,11 @@ namespace Something {
 
     void do_something()
     {
-        std::cout << "doing something!" << std::endl;
+#if defined(DO_SOMETHING_BIG)
+        std::cout << "doing something BIG!" << std::endl;
+#else
+        std::cout << "doing something (small)!" << std::endl;
+#endif
     }
 
 }  // namespace Something

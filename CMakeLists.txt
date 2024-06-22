@@ -6,6 +6,8 @@ project(CMakeTemplate
     LANGUAGES CXX
 )
 
+option(DO_SOMETHING_BIG "Do something big!" OFF)
+
 include(InstallRequiredSystemLibraries)
 set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
 set(CPACK_PACKAGE_VERSION_MAJOR "${CMakeTemplate_VERSION_MAJOR}")
@@ -22,13 +24,19 @@ configure_file(config.hpp.in config.hpp)
 add_subdirectory(subdir)
 
 add_executable(application application.cpp)
+target_compile_options(application
+    PRIVATE
+    -Wall
+    -Wextra
+    -pedantic
+)
 target_include_directories(application
-    PUBLIC
+    PRIVATE
     "${PROJECT_BINARY_DIR}"
     "${PROJECT_SOURCE_DIR}/subdir"
 )
 target_link_libraries(application
-    PUBLIC 
+    PRIVATE
     something
 )
 
